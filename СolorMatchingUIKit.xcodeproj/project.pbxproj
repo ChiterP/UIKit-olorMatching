@@ -11,6 +11,7 @@
 		43CB69592669FED50013EA2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB69582669FED50013EA2B /* ContentView.swift */; };
 		43CB695B2669FED60013EA2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CB695A2669FED60013EA2B /* Assets.xcassets */; };
 		43CB695E2669FED60013EA2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CB695D2669FED60013EA2B /* Preview Assets.xcassets */; };
+		43CB69662669FF910013EA2B /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB69652669FF910013EA2B /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		43CB695A2669FED60013EA2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CB695D2669FED60013EA2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43CB695F2669FED60013EA2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43CB69652669FF910013EA2B /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				43CB69562669FED50013EA2B /* _olorMatchingUIKitApp.swift */,
 				43CB69582669FED50013EA2B /* ContentView.swift */,
+				43CB69652669FF910013EA2B /* ColorView.swift */,
 				43CB695A2669FED60013EA2B /* Assets.xcassets */,
 				43CB695F2669FED60013EA2B /* Info.plist */,
 				43CB695C2669FED60013EA2B /* Preview Content */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43CB69662669FF910013EA2B /* ColorView.swift in Sources */,
 				43CB69592669FED50013EA2B /* ContentView.swift in Sources */,
 				43CB69572669FED50013EA2B /* _olorMatchingUIKitApp.swift in Sources */,
 			);
