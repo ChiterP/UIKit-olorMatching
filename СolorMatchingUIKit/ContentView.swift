@@ -10,24 +10,46 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var sliderValue = Double.random(in: 0...255)
-    @State private var inputColor = Int.random(in: 0...255)
-    @State private var userName = ""
+    @State private var sliderValueRed = Double.random(in: 0...255)
+    @State private var sliderValueGreen = Double.random(in: 0...255)
+    @State private var sliderValueBlue = Double.random(in: 0...255)
+    @State private var valColorRed = ""
+    @State private var valColorGreen = ""
+    @State private var valColorBlue = ""
     
     var body: some View {
         ZStack {
             Color(.brown)
                 .ignoresSafeArea()
             VStack {
-                ColorView(color: .gray)
+                ColorView(color: .init(
+                            red: sliderValueRed,
+                            green: sliderValueGreen,
+                            blue: sliderValueBlue,
+                            opacity: 1)
+                )
                     .padding()
-                ColorSlider(value: $sliderValue, color: .red)
-                ColorSlider(value: $sliderValue, color: .green)
-                ColorSlider(value: $sliderValue, color: .blue)
-                
-                TextField("Enter your name", text: $userName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                HStack {
+                    ColorSlider(value: $sliderValueRed, color: .red)
+                    TextField("\(lround(sliderValueRed))", text: $valColorRed)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 60, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding(.trailing)
+                }
+                HStack {
+                    ColorSlider(value: $sliderValueGreen, color: .green)
+                    TextField("\(lround(sliderValueGreen))", text: $valColorGreen)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 60, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding(.trailing)
+                }
+                HStack {
+                    ColorSlider(value: $sliderValueBlue, color: .blue)
+                    TextField("\(lround(sliderValueBlue))", text: $valColorBlue)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 60, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding(.trailing)
+                }
                 Spacer()
             }
             
@@ -36,6 +58,19 @@ struct ContentView: View {
     }
 }
 
+struct ColorSlider: View {
+    @Binding var value: Double
+    let color: Color
+    var body: some View {
+        HStack {
+            Text("0").foregroundColor(color)
+            Slider(value: $value, in: 0...255, step: 1)            
+        }
+        .padding(.horizontal)
+    }
+}
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
@@ -43,19 +78,13 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-struct ColorSlider: View {
-    @Binding var value: Double
-    
-//    @Binding var valColor: Int
-    private let inputColor = Int.random(in: 0...255)
-    
-    let color: Color
-    var body: some View {
-        HStack {
-            Text("0").foregroundColor(color)
-            Slider(value: $value, in: 0...255, step: 1)
-            TextField("\(inputColor)", text: $valColor)
-        }
-        .padding(.horizontal)
-    }
+
+/* private func setColor() {
+    colorView.backgroundColor = UIColor(
+        red: CGFloat(redSlider.value),
+        green: CGFloat(greenSlider.value),
+        blue: CGFloat(blueSlider.value),
+        alpha: 1
+    )
 }
+*/
