@@ -16,7 +16,6 @@ struct ContentView: View {
     @State private var valColorRed = ""
     @State private var valColorGreen = ""
     @State private var valColorBlue = ""
-    @State private var alertPresented = false
     
     var body: some View {
         ZStack {
@@ -33,34 +32,26 @@ struct ContentView: View {
                     ColorSlider(value: $sliderValueRed, color: .red)
                     TextFieldInput(
                         valColor: $valColorRed,
-                        sliderValue: $sliderValueRed)
+                        sliderValue: $sliderValueRed,
+                        alertPresented: false)
                 }
                 HStack {
                     ColorSlider(value: $sliderValueGreen, color: .green)
                     TextFieldInput(
                         valColor: $valColorGreen,
-                        sliderValue: $sliderValueGreen)
+                        sliderValue: $sliderValueGreen,
+                        alertPresented: false)
                 }
                 HStack {
                     ColorSlider(value: $sliderValueBlue, color: .blue)
                     TextFieldInput(
                         valColor: $valColorBlue,
-                        sliderValue: $sliderValueBlue
-                    )
+                        sliderValue: $sliderValueBlue,
+                        alertPresented: false)
                 }
                 Spacer()
             }
         }
-    }
-    
-    func checkInputColor() {
-        if let _ = Double(valColorRed) {
-            valColorRed = ""
-            alertPresented.toggle()
-            return
-        }
-        sliderValueRed = Double(valColorRed) ?? 0.0
-        valColorRed = ""
     }
 }
 
@@ -71,7 +62,7 @@ struct ColorSlider: View {
     var body: some View {
         HStack {
             Text("\(lround(value))").foregroundColor(color)
-            Slider(value: $value, in: 0...255, step: 1)            
+            Slider(value: $value, in: 0...255, step: 1)
         }
         .padding(.horizontal)
     }
@@ -83,23 +74,29 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
 struct TextFieldInput: View {
     
     @Binding var valColor: String
     @Binding var sliderValue: Double
+    @State var alertPresented: Bool
     
     var body: some View {
         TextField(("\(lround(sliderValue))"), text: $valColor,
                   onCommit: {
-                    sliderValue = Double(valColor) ?? 0.0
-                    print(sliderValue)
-                    print("COMITTED!")
+                    sliderValue = Double(valColor) ?? 999
+                    if sliderValue == 999 {
+                        sliderValue = 0
+                        valColor = "0"
+                        alertPresented = true
+                        return
+                    }
                   })
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .frame(width: 60, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .padding(.trailing)
+            .alert(isPresented: $alertPresented){
+                Alert(title: Text("Wrong Format!"),
+                      message: Text("Enter the number"))
+            }
     }
 }
-
-
