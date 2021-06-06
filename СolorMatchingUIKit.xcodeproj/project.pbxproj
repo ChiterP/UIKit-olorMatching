@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43CB69572669FED50013EA2B /* _olorMatchingUIKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB69562669FED50013EA2B /* _olorMatchingUIKitApp.swift */; };
+		43CB69572669FED50013EA2B /* ColorMatchingUIKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB69562669FED50013EA2B /* ColorMatchingUIKitApp.swift */; };
 		43CB69592669FED50013EA2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CB69582669FED50013EA2B /* ContentView.swift */; };
 		43CB695B2669FED60013EA2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CB695A2669FED60013EA2B /* Assets.xcassets */; };
 		43CB695E2669FED60013EA2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CB695D2669FED60013EA2B /* Preview Assets.xcassets */; };
@@ -16,7 +16,7 @@
 
 /* Begin PBXFileReference section */
 		43CB69532669FED50013EA2B /* СolorMatchingUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "СolorMatchingUIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		43CB69562669FED50013EA2B /* _olorMatchingUIKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _olorMatchingUIKitApp.swift; sourceTree = "<group>"; };
+		43CB69562669FED50013EA2B /* ColorMatchingUIKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMatchingUIKitApp.swift; sourceTree = "<group>"; };
 		43CB69582669FED50013EA2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		43CB695A2669FED60013EA2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CB695D2669FED60013EA2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		43CB69552669FED50013EA2B /* СolorMatchingUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				43CB69562669FED50013EA2B /* _olorMatchingUIKitApp.swift */,
+				43CB69562669FED50013EA2B /* ColorMatchingUIKitApp.swift */,
 				43CB69582669FED50013EA2B /* ContentView.swift */,
 				43CB69652669FF910013EA2B /* ColorView.swift */,
 				43CB695A2669FED60013EA2B /* Assets.xcassets */,
@@ -143,7 +143,7 @@
 			files = (
 				43CB69662669FF910013EA2B /* ColorView.swift in Sources */,
 				43CB69592669FED50013EA2B /* ContentView.swift in Sources */,
-				43CB69572669FED50013EA2B /* _olorMatchingUIKitApp.swift in Sources */,
+				43CB69572669FED50013EA2B /* ColorMatchingUIKitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
