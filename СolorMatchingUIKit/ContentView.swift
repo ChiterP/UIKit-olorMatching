@@ -32,22 +32,19 @@ struct ContentView: View {
                     ColorSlider(value: $sliderValueRed, color: .red)
                     TextFieldInput(
                         valColor: $valColorRed,
-                        sliderValue: $sliderValueRed,
-                        alertPresented: false)
+                        sliderValue: $sliderValueRed)
                 }
                 HStack {
                     ColorSlider(value: $sliderValueGreen, color: .green)
                     TextFieldInput(
                         valColor: $valColorGreen,
-                        sliderValue: $sliderValueGreen,
-                        alertPresented: false)
+                        sliderValue: $sliderValueGreen)
                 }
                 HStack {
                     ColorSlider(value: $sliderValueBlue, color: .blue)
                     TextFieldInput(
                         valColor: $valColorBlue,
-                        sliderValue: $sliderValueBlue,
-                        alertPresented: false)
+                        sliderValue: $sliderValueBlue)
                 }
                 Spacer()
             }
@@ -78,7 +75,7 @@ struct TextFieldInput: View {
     
     @Binding var valColor: String
     @Binding var sliderValue: Double
-    @State var alertPresented: Bool
+    @State private var alertPresented = false
     
     var body: some View {
         TextField(("\(lround(sliderValue))"), text: $valColor,
